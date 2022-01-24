@@ -1,8 +1,9 @@
 <header>
   <h1>{{ title }}</h1>
   <app-button
-    color="green"
-    text="Add"
+    *ngIf="isHome('/')"
+    color="{{ showAddForm ? 'red' : 'green' }}"
+    text="{{ showAddForm ? 'Close' : 'Add' }}"
     (btnClick)="toggleAddClose()"
   ></app-button>
 </header>
